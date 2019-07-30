@@ -19,14 +19,19 @@
     <script>
       const name = "Prabhu";
       const handle = "@sparkeplug";
-      const nameElement = React.createElement("h1", null, name);
-      const handleElement = React.createElement("h3", null, handle);
+      function nameComponent(props) {
+        return React.createElement("h1", null, props.name);
+      }
+      function handleComponent(props) {
+        return React.createElement("h3", null, props.handle);
+      }
       const wrapperElement = React.createElement(
         "div",
         { id: "container" },
-        nameElement,
-        handleElement
+        nameComponent,
+        handleComponent
       );
+      console.log(wrapperElement);
 
       ReactDOM.render(wrapperElement, document.getElementById("app"));
     </script>
