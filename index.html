@@ -36,6 +36,14 @@
             friends: ["Prabhu", "jai", "para"]
           };
         }
+        handleAddFriend() {}
+        handleRemoveFriend(name) {
+          this.setState(currentState => {
+            return {
+              friends: currentState.friends.filter(friend => friend !== name)
+            };
+          });
+        }
         render() {
           return (
             <div>
