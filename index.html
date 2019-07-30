@@ -28,8 +28,8 @@
       const wrapperElement = React.createElement(
         "div",
         { id: "container" },
-        nameComponent,
-        handleComponent
+        React.createElement(nameComponent,{name:'Prabhu'}),
+        React.createElement(handleComponent, {handle: '@Sparkeplug'})
       );
       console.log(wrapperElement);
 
