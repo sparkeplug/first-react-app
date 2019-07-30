@@ -13,27 +13,32 @@
       crossorigin
       src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
     ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
-    <script>
+
+    <script type="text/babel">
       const name = "Prabhu";
       const handle = "@sparkeplug";
-      function nameComponent(props) {
-        return React.createElement("h1", null, props.name);
-      }
-      function handleComponent(props) {
-        return React.createElement("h3", null, props.handle);
-      }
-      const wrapperElement = React.createElement(
-        "div",
-        { id: "container" },
-        React.createElement(nameComponent,{name:'Prabhu'}),
-        React.createElement(handleComponent, {handle: '@Sparkeplug'})
-      );
-      console.log(wrapperElement);
 
-      ReactDOM.render(wrapperElement, document.getElementById("app"));
+      function NameComponent(props) {
+        return <h1>{props.name}</h1>;
+      }
+      function HandleComponent(props) {
+        return <h3>{props.handle}</h3>;
+      }
+
+      function App() {
+        return (
+          <div id="container">
+            <NameComponent name={name} />
+            <HandleComponent handle={handle} />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("app"));
     </script>
   </body>
 </html>
