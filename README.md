@@ -1,2 +1,3 @@
 # first-react-app
-My First React app
+
+This is my first react app practice using TYLER MC'GINNIS React Bootcamp.
