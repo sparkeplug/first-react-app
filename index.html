@@ -19,23 +19,30 @@
     <div id="app"></div>
 
     <script type="text/babel">
-      const name = "Prabhu";
-      const handle = "@sparkeplug";
-
-      function NameComponent(props) {
-        return <h1>{props.name}</h1>;
-      }
-      function HandleComponent(props) {
-        return <h3>{props.handle}</h3>;
-      }
-
-      function App() {
+      function FriendsList(props) {
         return (
-          <div id="container">
-            <NameComponent name={name} />
-            <HandleComponent handle={handle} />
-          </div>
+          <ul>
+            {props.list.map(name => (
+              <li key={name}>{name}</li>
+            ))}
+          </ul>
         );
+      }
+
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            friends: ["Prabhu", "jai", "para"]
+          };
+        }
+        render() {
+          return (
+            <div>
+              <FriendsList list={this.state.friends} />
+            </div>
+          );
+        }
       }
 
       ReactDOM.render(<App />, document.getElementById("app"));
