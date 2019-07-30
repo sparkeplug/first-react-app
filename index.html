@@ -17,14 +17,18 @@
   <body>
     <div id="app"></div>
     <script>
-      const headerElement = React.createElement(
-        "h1",
-        { id: "header" },
-        "Prabhu"
+      const name = "Prabhu";
+      const handle = "@sparkeplug";
+      const nameElement = React.createElement("h1", null, name);
+      const handleElement = React.createElement("h3", null, handle);
+      const wrapperElement = React.createElement(
+        "div",
+        { id: "container" },
+        nameElement,
+        handleElement
       );
 
-      console.log(headerElement);
-      ReactDOM.render(headerElement, document.getElementById("app"));
+      ReactDOM.render(wrapperElement, document.getElementById("app"));
     </script>
   </body>
 </html>
